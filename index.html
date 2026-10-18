@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emil Aslanyan | Full-Stack & Data Engineer Portfolio</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #333; }
+        h1, h2, h3 { color: #111; }
+        .project-card { border: 1px solid #e1e4e8; border-radius: 8px; padding: 24px; margin-top: 20px; background: #fafafa; }
+        .tags span { background: #0366d6; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; margin-right: 6px; display: inline-block; margin-bottom: 5px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin: 16px 0; }
+        .gallery img { width: 100%; border-radius: 6px; border: 1px solid #ccc; object-fit: cover; }
+        .btn { display: inline-block; background: #2ea44f; color: white; padding: 10px 16px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px; margin-top: 10px; }
+        .btn-outline { background: transparent; color: #0366d6; border: 1px solid #0366d6; }
+    </style>
+</head>
+<body>
+
+    <h1>Emil Aslanyan</h1>
+    <p><strong>Full-Stack Web Developer & Data Engineer</strong></p>
+    <p>Specializing in web scraping, automated data pipelines, Node.js, and relational database architecture.</p>
+
+    <hr>
+
+    <!-- SECTION 1: FEATURED PROJECT -->
+    <h2>Featured Project</h2>
+
+    <div class="project-card">
+        <h3>Armenopedia — Global Diaspora Ecosystem Platform</h3>
+        
+        <div class="tags">
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>JavaScript</span>
+            <span>HTML/CSS</span>
+            <span>PostgreSQL/MySQL</span>
+            <span>ETL / Web Scraping</span>
+        </div>
+
+        <p>A comprehensive platform built to unite the global Armenian Diaspora (*Spyurk*), connecting non-resident Armenians, organizations, and businesses into a single central hub.</p>
+
+        <h4>What I Built:</h4>
+        <ul>
+            <li><strong>Full-Stack Development:</strong> Built the entire responsive UI/UX from scratch using HTML, CSS, and JavaScript, connected to backend API services.</li>
+            <li><strong>Database & Data Engineering:</strong> Designed relational database schemas and built automated pipelines to clean, transform, and ingest multi-source datasets into structured tables.</li>
+        </ul>
+
+        <h4>UI Screenshots & Case Study:</h4>
+        <div class="gallery">
+            <!-- Update image src names to match the exact file names in your assets/ folder -->
+            <img src="assets/screenshot1.png" alt="Armenopedia Preview 1">
+            <img src="assets/screenshot2.png" alt="Armenopedia Preview 2">
+        </div>
+
+        <div>
+            <!-- Update pdf name to match the exact file name in your assets/ folder -->
+            <a href="assets/armenopedia-ui.pdf" target="_blank" class="btn">View UI Case Study (PDF)</a>
+            <a href="https://github.com/AslanEmil008/Armenopedia" target="_blank" class="btn btn-outline">View GitHub Code</a>
+        </div>
+    </div>
+
+    <!-- SECTION 2: CLIENT WORK & UPWORK JOBS -->
+    <h2 style="margin-top: 40px;">Client Work & Upwork Deliverables</h2>
+
+    <div class="project-card">
+        <h3>Freelance Projects & Data Engineering Deliverables</h3>
+        <p>A selection of screenshots, automated workflows, and data pipelines completed for clients on Upwork.</p>
+
+        <div class="gallery">
+            <!-- Update image src names to match the exact file names in your job/ folder -->
+            <img src="job/job1.png" alt="Upwork Client Deliverable 1">
+            <img src="job/job2.png" alt="Upwork Client Deliverable 2">
+        </div>
+    </div>
+
+</body>
+</html>
