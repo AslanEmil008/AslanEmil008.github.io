@@ -313,16 +313,16 @@
 
                 <p class="project-description">
                     Engineered a scalable, full-stack directory platform designed to consolidate global diaspora
-                    organizations, enterprise entities, profiles, and resources into a unified portal[cite: 1].
+                    organizations, enterprise entities, profiles, and resources into a unified portal.
                 </p>
 
                 <ul class="points">
                     <li><strong>Full-Stack Architecture & REST APIs:</strong> Built backend application routes in
-                        Node.js/Express with REST APIs for frontend integration[cite: 1].</li>
+                        Node.js/Express with REST APIs for frontend integration.</li>
                     <li><strong>Data Pipelines & Ingestion:</strong> Built extraction and cleaning scripts to transform
-                        raw web data into production SQL structures[cite: 1].</li>
+                        raw web data into production SQL structures.</li>
                     <li><strong>Database Normalization:</strong> Designed schemas in PostgreSQL and MySQL to query user
-                        records and media assets[cite: 1].</li>
+                        records and media assets.</li>
                 </ul>
 
                 <div class="showcase-title">Platform Architecture, UI Layouts & Code Artifacts</div>
@@ -330,6 +330,7 @@
             </div>
         </section>
 
+        <!-- CLIENT WORK & UPWORK DELIVERABLES -->
         <!-- CLIENT WORK & UPWORK DELIVERABLES -->
         <section>
             <h2>Client Projects & Freelance Deliverables</h2>
@@ -344,7 +345,23 @@
             </div>
         </section>
 
-    </div>
+        <!-- VERIFIED UPWORK FEEDBACK SHOWCASE -->
+        <section style="margin-top: 40px;">
+            <h2>Verified Client Testimonials & Upwork History</h2>
+            <div class="card">
+                <p class="project-description">
+                    A track record of 5.0-star ratings across web scraping, lead generation, browser extension setup,
+                    and app store data extraction contracts.
+                </p>
+
+                <div id="testimonials-grid" class="media-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));"></div>
+            </div>
+        </section>
+
+    </div> <!-- Closing tag for <div class="container"> -->
+
+  
 
     <script>
         // 1. ARMENOPEDIA FILES (PDFs AND IMAGES)
@@ -428,8 +445,106 @@
                     'Created a step-by-step operational setup guide for running future automated extraction tasks.',
                     'Assisted in setting up automated data export pipelines into clean CSV format.'
                 ]
+            },
+
+            {
+                images: [
+                    { file: 'Screenshot from 2026-10-18 17-48-51.png', label: 'Upwork Contract Details' },
+                    { file: 'Screenshot from 2026-10-18 17-49-29.png', label: 'Structured Excel Data Output' }
+                ],
+                title: 'Automated LinkedIn Profile Search & Targeted Lead Scraping',
+                client: '5.0 ★★★★★ Upwork Client Review (Spark Vision Agency / Leo Andy)',
+                summary: 'Engineered a targeted Python web scraper to execute complex filter queries across LinkedIn profiles, automatically extracting and structuring lead data including full names, professions, university affiliations, profile URLs, and verified contact emails.',
+                deliverables: [
+                    'Developed custom Python automation to programmatically execute targeted profile searches based on client criteria.',
+                    'Extracted structured records including First Name, Last Name, University/Organization, Profession, LinkedIn URL, and Email addresses.',
+                    'Implemented data cleaning pipelines to normalize raw profile payloads into structured, client-ready spreadsheet formats.',
+                    'Handled query execution and session flow to collect reliable, high-accuracy target lists without data loss.'
+                ]
+            },
+            {
+                images: [
+                    { file: 'jermy2.png', label: 'Upwork Contract Review (Jeremy Yudkin)' },
+                    { file: 'Screenshot from 2026-10-19 17-22-09.png', label: 'Google Play & App Store Data Pipeline' },
+                    { file: 'jermy1.png', label: 'Top.gg Music Bots Scraped Output' }
+                ],
+                title: 'Multi-Platform App Store & Discord Bot Data Pipeline Automation',
+                client: '5.0 ★★★★★ Upwork Client Review (Jeremy Yudkin)',
+                summary: 'Developed multi-platform automated extraction pipelines utilizing store APIs and custom web scrapers to harvest targeted app intelligence across the iOS App Store, Google Play Store, and Top.gg Discord bot directory.',
+                deliverables: [
+                    'Engineered Python API extraction workflows to harvest Android and iOS app metadata, including app titles, bundle IDs, developer emails/websites, genres, descriptions, and update timestamps across Free, Paid, and Grossing charts.',
+                    'Scraped and structured Discord music bot analytics from Top.gg, extracting bot names, ratings, official sites, support emails, server counts, member totals, vote counts, and Discord invite links.',
+                    'Built automated cleaning and formatting scripts to aggregate multi-source datasets into structured Google Sheets and Excel workbooks.'
+                ]
+            },
+            {
+                images: [
+                    { file: 'asp1.png', label: 'Upwork Contract Review (Ian Fearn)' },
+                    { file: 'Screenshot from 2026-10-19 17-26-07.png', label: 'Multi-Country Banking App Dataset' }
+                ],
+                title: 'Multi-Region Banking & Financial App Store Analytics Scraping',
+                client: '5.0 ★★★★★ Upwork Client Review (Ian Fearn)',
+                summary: 'Executed an automated data extraction project targeting financial institution mobile apps across 20 countries and 64 target banking organizations on both the iOS App Store and Google Play Store.',
+                deliverables: [
+                    'Built automated pipelines to harvest app intelligence across specific international storefronts (e.g., Bahamas, Guyana, Jamaica, Trinidad & Tobago).',
+                    'Extracted specialized metrics including Bank Name, OS Platform (iOS/Android), Application Name, Finance Category Rank, Total Ratings, Comment Counts, Rating Scores, and Developer Names.',
+                    'Organized individual app review tabs alongside aggregated master datasets directly within cloud-synchronized Google Sheets.'
+                ]
             }
         ];
+
+        // TESTIMONIALS ARRAY BASED ON YOUR FEEDBACK SCREENSHOTS
+        const clientTestimonials = [
+            {
+                image: 'feedback1.png',
+                title: 'Upwork Work History — Part 1',
+                quote: '"Emil has been very reactive and did the job requested" & "Trustworthy and really easy to work with!"',
+                highlights: ['5.0 ★ Rating', 'Web Scraper Pagination', 'App Data Scraping']
+            },
+            {
+                image: 'feedback2.png',
+                title: 'Upwork Work History — Part 2',
+                quote: 'Verified contract history covering technical Scrapy consulting, custom web scraping pipelines, and data collection.',
+                highlights: ['5.0 ★ Rating', 'Scrapy Consulting', 'Web Scraping Pipelines']
+            },
+            {
+                image: 'feedback3.png',
+                title: 'Upwork Work History — Part 3',
+                quote: '"Good freelancer! Worked in quickly timeframe.. Good results with him!!!" & "Excellent work. He proposed solutions to our problems..."',
+                highlights: ['5.0 ★ Rating', 'Solution Oriented', 'Committed to Quality']
+            }
+        ];
+
+        function renderTestimonials(items, folderPath, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+
+            items.forEach(item => {
+                const filePath = `${folderPath}/${encodeURIComponent(item.image)}`;
+
+                const card = document.createElement('div');
+                card.className = 'case-study-img-card';
+                card.style.background = 'var(--bg)';
+                card.style.padding = '12px';
+
+                const highlightTags = item.highlights.map(h => `<span style="background: rgba(34,197,94,0.1); color: var(--accent-green); border: 1px solid var(--accent-green); padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: 600;">${h}</span>`).join(' ');
+
+                card.innerHTML = `
+            <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-main); margin-bottom: 8px;">${item.title}</div>
+            <div style="margin-bottom: 10px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border);">
+                <img src="${filePath}" alt="${item.title}" style="width: 100%; height: auto; display: block;" loading="lazy">
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 10px;">${item.quote}</p>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">${highlightTags}</div>
+            <a href="${filePath}" target="_blank" style="margin-top: 10px; display: block; text-align: center; padding: 6px; background: rgba(56, 189, 248, 0.08); color: var(--accent); text-decoration: none; font-size: 0.78rem; font-weight: 600; border-radius: 4px;">🔍 View Full Feedback Screenshot ↗</a>
+        `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Call renderer
+        renderTestimonials(clientTestimonials, 'job', 'testimonials-grid');
 
         function renderUpworkCaseStudies(projects, folderPath, containerId) {
             const container = document.getElementById(containerId);
