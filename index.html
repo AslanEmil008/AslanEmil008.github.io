@@ -24,18 +24,16 @@
             padding: 24px 16px;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; }
+        .container { max-width: 1050px; margin: 0 auto; }
 
-        /* Section Headings */
         h2 { font-size: 1.6rem; color: var(--text-main); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 4px; margin-bottom: 20px; }
 
-        /* Project Card */
-        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+        /* Project Card Base */
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 32px; }
         .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
         .card h3 { font-size: 1.4rem; color: var(--text-main); }
         .date { font-size: 0.85rem; color: var(--text-muted); }
         
-        /* Tech Stack Tags */
         .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px 0; }
         .tags span { 
             background: rgba(56, 189, 248, 0.1); 
@@ -47,13 +45,12 @@
             font-weight: 500;
         }
 
-        /* Description Points */
         .project-description { margin-bottom: 16px; color: var(--text-muted); font-size: 0.98rem; }
         ul.points { margin-left: 20px; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
         ul.points li { margin-bottom: 8px; }
         ul.points strong { color: var(--text-main); }
 
-        /* Asset Grid Showcase */
+        /* Media Grid with PDF Live Preview Frames */
         .showcase-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px 0; color: var(--text-main); border-top: 1px solid var(--border); padding-top: 16px; }
         .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
         .media-card {
@@ -66,6 +63,7 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.2s, border-color 0.2s;
+            position: relative;
         }
         .media-card:hover { transform: translateY(-3px); border-color: var(--accent); }
         .media-label {
@@ -76,34 +74,79 @@
             border-bottom: 1px solid var(--border);
             color: var(--accent);
             text-align: center;
+            z-index: 2;
         }
-        .media-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
-        .media-card .pdf-placeholder {
-            height: 130px;
+        
+        .preview-wrapper { width: 100%; height: 140px; overflow: hidden; position: relative; background: #fff; }
+        .media-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        
+        /* Scaled PDF Embed Preview */
+        .pdf-preview-embed {
+            width: 1000px;
+            height: 700px;
+            border: none;
+            transform: scale(0.2);
+            transform-origin: 0 0;
+            pointer-events: none; /* Clicking passes through to anchor tag */
+        }
+
+        .file-name { display: block; padding: 6px 8px; font-size: 0.75rem; color: var(--text-muted); text-align: center; background: var(--bg); z-index: 2; }
+
+        /* Client Work Case Studies Section */
+        .case-study-list { display: flex; flex-direction: column; gap: 24px; margin-top: 16px; }
+        .case-study-item {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        @media (max-width: 768px) {
+            .case-study-item { grid-template-columns: 1fr; }
+        }
+
+        .case-study-img-wrapper {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.02);
-            font-size: 2.2rem;
+            flex-direction: column;
         }
-        .media-card .file-name { display: block; padding: 6px 8px; font-size: 0.75rem; color: var(--text-muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .case-study-img-wrapper img { width: 100%; height: auto; object-fit: cover; display: block; }
+        .case-study-img-wrapper a {
+            display: block;
+            text-align: center;
+            padding: 6px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .case-study-details h4 { font-size: 1.1rem; color: var(--text-main); margin-bottom: 6px; }
+        .case-study-details .client-tag { display: inline-block; font-size: 0.8rem; color: var(--accent-green); font-weight: 600; margin-bottom: 10px; }
+        .case-study-details p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; }
+        .case-study-details .deliverables-title { font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-top: 8px; }
+        .case-study-details ul { margin-left: 18px; color: var(--text-muted); font-size: 0.88rem; }
     </style>
 </head>
 <body>
 
 <div class="container">
 
+    <!-- ARMENOPEDIA SECTION -->
     <section>
         <h2>Featured Platform Project</h2>
 
-        <!-- ARMENOPEDIA PROJECT CARD -->
         <div class="card">
             <div class="card-header">
                 <h3>DiasporaArm — Armenopedia Ecosystem Platform</h3>
                 <span class="date">Oct 2025 – Jul 2026</span>
             </div>
 
-            <!-- ENHANCED TECH STACK TAGS -->
             <div class="tags">
                 <span>Node.js</span>
                 <span>Express.js</span>
@@ -116,36 +159,38 @@
                 <span>Linux (systemd)</span>
             </div>
 
-            <!-- CLIENT-FOCUSED DESCRIPTION -->
             <p class="project-description">
-                Engineered a scalable, full-stack directory platform designed to consolidate and categorize global diaspora organizations, enterprise entities, profiles, and resources into a single central hub[cite: 1].
+                Engineered a scalable, full-stack directory platform designed to consolidate global diaspora organizations, enterprise entities, profiles, and resources into a unified portal[cite: 1].
             </p>
 
             <ul class="points">
-                <li>
-                    <strong>Full-Stack Architecture & REST APIs:</strong> Architected the entire backend service from scratch using Node.js and Express.js, implementing RESTful API endpoints for dynamic frontend data rendering and user state management[cite: 1].
-                </li>
-                <li>
-                    <strong>Data Scraping & Automated Ingestion:</strong> Built automated data extraction scripts to collect raw organizational records from unstructured web sources, cleaning and transforming the raw payloads into production-ready SQL structures[cite: 1].
-                </li>
-                <li>
-                    <strong>Database Design & Optimization:</strong> Structured normalized relational schemas in PostgreSQL/MySQL to query multi-entity profiles, geolocation records, and media attachments efficiently[cite: 1].
-                </li>
-                <li>
-                    <strong>Frontend & Production Deployment:</strong> Designed responsive, dynamic web interfaces using standard HTML5, CSS3, and modern JavaScript, deploying background process management via <code>systemd</code> services on Ubuntu Linux servers to guarantee high uptime[cite: 1].
-                </li>
+                <li><strong>Full-Stack Architecture & REST APIs:</strong> Built backend application routes in Node.js/Express with REST APIs for frontend integration[cite: 1].</li>
+                <li><strong>Data Pipelines & Ingestion:</strong> Built extraction and cleaning scripts to transform raw web data into production SQL structures[cite: 1].</li>
+                <li><strong>Database Normalization:</strong> Designed schemas in PostgreSQL and MySQL to query user records and media assets[cite: 1].</li>
             </ul>
 
-            <!-- SHOWCASE WITH SPECIFIC TITLES -->
             <div class="showcase-title">Platform Architecture, UI Layouts & Code Artifacts</div>
             <div id="armenopedia-assets-container" class="media-grid"></div>
+        </div>
+    </section>
+
+    <!-- CLIENT WORK & UPWORK DELIVERABLES -->
+    <section>
+        <h2>Client Projects & Freelance Deliverables</h2>
+
+        <div class="card">
+            <p class="project-description">
+                Below are selected client engagements from Upwork, featuring technical execution notes, scraping pipelines, automated workflows, and verified feedback.
+            </p>
+
+            <div id="upwork-case-studies" class="case-study-list"></div>
         </div>
     </section>
 
 </div>
 
 <script>
-    // FULL MAPPED ARRAY OF YOUR 23 ARMENOPEDIA FILES WITH DESCRIPTIVE SECTION LABELS
+    // 1. ARMENOPEDIA FILES (PDFs AND IMAGES)
     const armenopediaFiles = [
         { file: 'Armenopedia-home-page.pdf', title: 'Main Home Page Layout' },
         { file: 'Armenoedia Admin-panel.pdf', title: 'Admin Control Panel' },
@@ -187,16 +232,22 @@
             card.target = '_blank';
 
             if (isPdf) {
+                // PDF live page thumbnail preview inside iframe wrapper
                 card.innerHTML = `
                     <div class="media-label">${item.title}</div>
-                    <div class="pdf-placeholder">📄</div>
-                    <span class="file-name">Open Document</span>
+                    <div class="preview-wrapper">
+                        <iframe class="pdf-preview-embed" src="${filePath}#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                    </div>
+                    <span class="file-name">📄 Open PDF Document</span>
                 `;
             } else {
+                // Image preview
                 card.innerHTML = `
                     <div class="media-label">${item.title}</div>
-                    <img src="${filePath}" alt="${item.title}" loading="lazy">
-                    <span class="file-name">View Image</span>
+                    <div class="preview-wrapper">
+                        <img src="${filePath}" alt="${item.title}" loading="lazy">
+                    </div>
+                    <span class="file-name">🖼️ View Image</span>
                 `;
             }
 
@@ -204,8 +255,86 @@
         });
     }
 
-    // Render assets on page load
+    // 2. UPWORK CLIENT CASE STUDIES (CUSTOMIZE DESCRIPTIONS BELOW FOR YOUR EXACT SCREENSHOTS)
+    const upworkProjects = [
+        {
+            image: 'feedback1.png',
+            title: 'High-Volume Web Extraction & Pipeline Automation',
+            client: 'Verified Upwork Client Review',
+            summary: 'Engineered custom scraping scripts to harvest and parse complex web assets while bypassing dynamic anti-bot protection systems[cite: 1].',
+            deliverables: [
+                'Harvested and validated 800,000+ media assets and raw records[cite: 1].',
+                'Configured proxy pool rotation and dynamic headless browser session handling[cite: 1].',
+                'Cleaned, structured, and exported final datasets into structured JSON/CSV formats[cite: 1].'
+            ]
+        },
+        {
+            image: 'asp1.png',
+            title: 'Automated Data Pipeline & Database Integration',
+            client: 'Custom Automation Script',
+            summary: 'Developed Python-based automation workflows to automatically fetch, clean, and insert raw scraped records into target SQL tables[cite: 1].',
+            deliverables: [
+                'Designed automated parsing functions using Pandas and BeautifulSoup[cite: 1].',
+                'Implemented database connection handlers for low-latency batch inserts[cite: 1].',
+                'Delivered clean script execution documentation and logging mechanisms[cite: 1].'
+            ]
+        },
+        {
+            image: 'feedback2.png',
+            title: 'Script Refactoring, Debugging & Performance Audit',
+            client: '5-Star Freelance Feedback',
+            summary: 'Audited existing client codebase to eliminate memory leaks, optimize query execution time, and repair broken scrapers[cite: 1].',
+            deliverables: [
+                'Fixed network timeout issues across concurrent scraping requests[cite: 1].',
+                'Optimized async workflows reducing total execution runtimes[cite: 1].',
+                'Provided clean client documentation for running scripts on Linux servers[cite: 1].'
+            ]
+        },
+        {
+            image: 'jermy1.png',
+            title: 'Custom Scraper & Data Pipeline Output',
+            client: 'Data Delivery Verification',
+            summary: 'Demonstrating structured output generated by automated data scrapers mapped directly into client database schemas.',
+            deliverables: [
+                'Normalized raw payload data into relational database fields.',
+                'Validated payload accuracy and handled missing attribute edge cases.'
+            ]
+        }
+    ];
+
+    function renderUpworkCaseStudies(projects, folderPath, containerId) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+
+        projects.forEach(project => {
+            const imagePath = `${folderPath}/${encodeURIComponent(project.image)}`;
+            
+            const item = document.createElement('div');
+            item.className = 'case-study-item';
+
+            const deliverablesList = project.deliverables.map(d => `<li>${d}</li>`).join('');
+
+            item.innerHTML = `
+                <div class="case-study-img-wrapper">
+                    <img src="${imagePath}" alt="${project.title}" loading="lazy">
+                    <a href="${imagePath}" target="_blank">View Full Screenshot ↗</a>
+                </div>
+                <div class="case-study-details">
+                    <h4>${project.title}</h4>
+                    <span class="client-tag">${project.client}</span>
+                    <p>${project.summary}</p>
+                    <div class="deliverables-title">What I Delivered & Accomplished:</div>
+                    <ul>${deliverablesList}</ul>
+                </div>
+            `;
+
+            container.appendChild(item);
+        });
+    }
+
+    // Render both sections on load
     renderArmenopediaShowcase(armenopediaFiles, 'assets', 'armenopedia-assets-container');
+    renderUpworkCaseStudies(upworkProjects, 'job', 'upwork-case-studies');
 </script>
 
 </body>
