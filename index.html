@@ -3,154 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emil Aslanyan | Full-Stack & Data Engineer Portfolio</title>
+    <title>Emil Aslanyan | Data & Software Engineer Portfolio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 950px; margin: 0 auto; padding: 20px; color: #333; }
-        h1, h2, h3 { color: #111; }
-        .project-card { border: 1px solid #e1e4e8; border-radius: 8px; padding: 24px; margin-top: 20px; background: #fafafa; }
-        .tags span { background: #0366d6; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; margin-right: 6px; display: inline-block; margin-bottom: 5px; }
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-green: #22c55e;
+            --border: #334155;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; }
+
+        /* Section Headings */
+        h2 { font-size: 1.6rem; color: var(--text-main); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 4px; margin-bottom: 20px; }
+
+        /* Project Card */
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+        .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+        .card h3 { font-size: 1.4rem; color: var(--text-main); }
+        .date { font-size: 0.85rem; color: var(--text-muted); }
         
-        /* Grid layout for images and PDFs */
-        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0; }
-        .media-item { border: 1px solid #ccc; border-radius: 6px; padding: 10px; background: #fff; display: flex; flex-direction: column; }
-        .media-item img { width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee; object-fit: contain; max-height: 400px; }
-        .pdf-viewer { width: 100%; height: 450px; border: 1px solid #ddd; border-radius: 4px; margin-top: 8px; background: #f9f9f9; }
-        .media-title { font-weight: bold; font-size: 0.9rem; color: #24292e; word-break: break-word; margin-bottom: 6px; }
-        
-        .btn { display: inline-block; background: #2ea44f; color: white; padding: 6px 12px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 8px; font-size: 0.85rem; text-align: center; }
-        .btn-outline { background: transparent; color: #0366d6; border: 1px solid #0366d6; padding: 10px 16px; font-size: 0.95rem; }
+        /* Tech Stack Tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px 0; }
+        .tags span { 
+            background: rgba(56, 189, 248, 0.1); 
+            color: var(--accent); 
+            border: 1px solid var(--accent); 
+            padding: 4px 12px; 
+            border-radius: 14px; 
+            font-size: 0.82rem;
+            font-weight: 500;
+        }
+
+        /* Description Points */
+        .project-description { margin-bottom: 16px; color: var(--text-muted); font-size: 0.98rem; }
+        ul.points { margin-left: 20px; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        ul.points li { margin-bottom: 8px; }
+        ul.points strong { color: var(--text-main); }
+
+        /* Asset Grid Showcase */
+        .showcase-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px 0; color: var(--text-main); border-top: 1px solid var(--border); padding-top: 16px; }
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+        .media-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .media-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .media-label {
+            padding: 8px 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid var(--border);
+            color: var(--accent);
+            text-align: center;
+        }
+        .media-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
+        .media-card .pdf-placeholder {
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.02);
+            font-size: 2.2rem;
+        }
+        .media-card .file-name { display: block; padding: 6px 8px; font-size: 0.75rem; color: var(--text-muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     </style>
 </head>
 <body>
 
-    <h1>Emil Aslanyan</h1>
-    <p><strong>Full-Stack Web Developer & Data Engineer</strong></p>
-    <p>Specializing in web scraping, automated data pipelines, Node.js, and relational database architecture.</p>
+<div class="container">
 
-    <hr>
+    <section>
+        <h2>Featured Platform Project</h2>
 
-    <!-- SECTION 1: ARMENOPEDIA -->
-    <h2>Featured Project — Armenopedia</h2>
+        <!-- ARMENOPEDIA PROJECT CARD -->
+        <div class="card">
+            <div class="card-header">
+                <h3>DiasporaArm — Armenopedia Ecosystem Platform</h3>
+                <span class="date">Oct 2025 – Jul 2026</span>
+            </div>
 
-    <div class="project-card">
-        <h3>Armenopedia — Global Diaspora Ecosystem Platform</h3>
-        
-        <div class="tags">
-            <span>Node.js</span>
-            <span>Express</span>
-            <span>JavaScript</span>
-            <span>HTML/CSS</span>
-            <span>PostgreSQL/MySQL</span>
-            <span>ETL / Web Scraping</span>
+            <!-- ENHANCED TECH STACK TAGS -->
+            <div class="tags">
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>REST API</span>
+                <span>PostgreSQL</span>
+                <span>MySQL</span>
+                <span>Web Scraping & Data Cleaning</span>
+                <span>JavaScript (ES6+)</span>
+                <span>HTML5 / CSS3</span>
+                <span>Linux (systemd)</span>
+            </div>
+
+            <!-- CLIENT-FOCUSED DESCRIPTION -->
+            <p class="project-description">
+                Engineered a scalable, full-stack directory platform designed to consolidate and categorize global diaspora organizations, enterprise entities, profiles, and resources into a single central hub[cite: 1].
+            </p>
+
+            <ul class="points">
+                <li>
+                    <strong>Full-Stack Architecture & REST APIs:</strong> Architected the entire backend service from scratch using Node.js and Express.js, implementing RESTful API endpoints for dynamic frontend data rendering and user state management[cite: 1].
+                </li>
+                <li>
+                    <strong>Data Scraping & Automated Ingestion:</strong> Built automated data extraction scripts to collect raw organizational records from unstructured web sources, cleaning and transforming the raw payloads into production-ready SQL structures[cite: 1].
+                </li>
+                <li>
+                    <strong>Database Design & Optimization:</strong> Structured normalized relational schemas in PostgreSQL/MySQL to query multi-entity profiles, geolocation records, and media attachments efficiently[cite: 1].
+                </li>
+                <li>
+                    <strong>Frontend & Production Deployment:</strong> Designed responsive, dynamic web interfaces using standard HTML5, CSS3, and modern JavaScript, deploying background process management via <code>systemd</code> services on Ubuntu Linux servers to guarantee high uptime[cite: 1].
+                </li>
+            </ul>
+
+            <!-- SHOWCASE WITH SPECIFIC TITLES -->
+            <div class="showcase-title">Platform Architecture, UI Layouts & Code Artifacts</div>
+            <div id="armenopedia-assets-container" class="media-grid"></div>
         </div>
+    </section>
 
-        <p>A comprehensive platform built to unite the global Armenian Diaspora, connecting non-resident Armenians, organizations, and businesses into a single central hub.</p>
+</div>
 
-        <h4>What I Built:</h4>
-        <ul>
-            <li><strong>Full-Stack Development:</strong> Built the entire responsive UI/UX from scratch using HTML, CSS, and JavaScript, connected to backend API services.</li>
-            <li><strong>Database & Data Engineering:</strong> Designed relational database schemas and built automated pipelines to clean, transform, and ingest multi-source datasets into structured tables.</li>
-        </ul>
+<script>
+    // FULL MAPPED ARRAY OF YOUR 23 ARMENOPEDIA FILES WITH DESCRIPTIVE SECTION LABELS
+    const armenopediaFiles = [
+        { file: 'Armenopedia-home-page.pdf', title: 'Main Home Page Layout' },
+        { file: 'Armenoedia Admin-panel.pdf', title: 'Admin Control Panel' },
+        { file: 'People-page.pdf', title: 'People Directory Index' },
+        { file: 'Person Profile.pdf', title: 'Individual Profile View' },
+        { file: 'Person Profile-ge.pdf', title: 'Localized Profile Layout' },
+        { file: 'Students Page.pdf', title: 'Student Directory Index' },
+        { file: 'Student Profile.pdf', title: 'Student Profile Detail' },
+        { file: 'Enterprises & Industry.pdf', title: 'Enterprise Directory Index' },
+        { file: 'Enterprise Profile.pdf', title: 'Enterprise Business View' },
+        { file: 'Hospitality.pdf', title: 'Hospitality Sector Index' },
+        { file: 'Hospitality Profile.pdf', title: 'Hospitality Profile Detail' },
+        { file: 'Armenopedia Login Form.pdf', title: 'Authentication Login Form' },
+        { file: 'Armenopedia Login Form-signup.pdf', title: 'User Registration Form' },
+        { file: 'Profile Page.pdf', title: 'User Account Dashboard' },
+        { file: 'Profile Page-edit.pdf', title: 'Profile Settings & Editor' },
+        { file: 'Profile Page-changepass.pdf', title: 'Security & Password View' },
+        { file: 'armenopedia-code.png', title: 'Node.js/Express Controller' },
+        { file: 'armenopedia-code1.png', title: 'REST API Route Implementation' },
+        { file: 'armenopedia-code2.png', title: 'Database Pipeline Integration' },
+        { file: 'armenopedia-code3.png', title: 'Frontend UI Scripting' },
+        { file: 'armenopedia-code4.png', title: 'Data Cleaning & Query Logic' },
+        { file: 'struct-code.png', title: 'Relational Database Schema' },
+        { file: 'Screenshot from 2026-10-18 17-39-05.png', title: 'UI Component Interface' },
+        { file: 'Screenshot from 2026-10-18 17-40-07.png', title: 'System Logs & Response' }
+    ];
 
-        <h4>Armenopedia Showcase (UI Designs & Code):</h4>
-        <div id="armenopedia-assets-container" class="media-grid"></div>
+    function renderArmenopediaShowcase(items, folderPath, containerId) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
 
-        <div style="margin-top: 20px;">
-            <a href="https://github.com/AslanEmil008/Armenopedia" target="_blank" class="btn btn-outline">View GitHub Repository</a>
-        </div>
-    </div>
+        items.forEach(item => {
+            const filePath = `${folderPath}/${encodeURIComponent(item.file)}`;
+            const isPdf = item.file.toLowerCase().endsWith('.pdf');
+            
+            const card = document.createElement('a');
+            card.className = 'media-card';
+            card.href = filePath;
+            card.target = '_blank';
 
-    <!-- SECTION 2: CLIENT WORK / UPWORK JOBS -->
-    <h2 style="margin-top: 40px;">Client Work & Upwork Deliverables</h2>
-
-    <div class="project-card">
-        <h3>Freelance Projects & Data Engineering Deliverables</h3>
-        <p>A selection of screenshots, client feedback, automated workflows, and data pipelines completed for clients on Upwork.</p>
-
-        <div id="job-assets-container" class="media-grid"></div>
-    </div>
-
-    <script>
-        // ALL 23 ARMENOPEDIA FILES IN YOUR ASSETS FOLDER
-        const armenopediaFiles = [
-            'Hospitality Profile.pdf',
-            'Armenoedia Admin-panel.pdf',
-            'People-page.pdf',
-            'armenopedia-code1.png',
-            'Person Profile-ge.pdf',
-            'armenopedia-code2.png',
-            'Person Profile.pdf',
-            'armenopedia-code3.png',
-            'Profile Page-changepass.pdf',
-            'armenopedia-code4.png',
-            'Profile Page-edit.pdf',
-            'armenopedia-code.png',
-            'Profile Page.pdf',
-            'Armenopedia-home-page.pdf',
-            'Screenshot from 2026-10-18 17-39-05.png',
-            'Armenopedia Login Form.pdf',
-            'Screenshot from 2026-10-18 17-40-07.png',
-            'Armenopedia Login Form-signup.pdf',
-            'struct-code.png',
-            'Enterprise Profile.pdf',
-            'Student Profile.pdf',
-            'Enterprises & Industry.pdf',
-            'Students Page.pdf',
-            'Hospitality.pdf'
-        ];
-
-        // ALL UPWORK / JOB FILES IN YOUR JOB FOLDER
-        const jobFiles = [
-            'asp1.png',
-            'asp2.png',
-            'feedback1.png',
-            'feedback2.png',
-            'feedback3.png',
-            'jermy1.png',
-            'jermy2.png',
-            'Screenshot from 2026-10-18 17-47-22.png',
-            'Screenshot from 2026-10-18 17-48-51.png',
-            'Screenshot from 2026-10-18 17-49-29.png'
-        ];
-
-        function renderFiles(fileList, folderPath, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
-
-            if (fileList.length === 0) {
-                container.innerHTML = '<p style="color: #666; font-style: italic;">No extra files specified.</p>';
-                return;
+            if (isPdf) {
+                card.innerHTML = `
+                    <div class="media-label">${item.title}</div>
+                    <div class="pdf-placeholder">📄</div>
+                    <span class="file-name">Open Document</span>
+                `;
+            } else {
+                card.innerHTML = `
+                    <div class="media-label">${item.title}</div>
+                    <img src="${filePath}" alt="${item.title}" loading="lazy">
+                    <span class="file-name">View Image</span>
+                `;
             }
 
-            fileList.forEach(fileName => {
-                const filePath = `${folderPath}/${encodeURIComponent(fileName)}`;
-                const isPdf = fileName.toLowerCase().endsWith('.pdf');
-                
-                const wrapper = document.createElement('div');
-                wrapper.className = 'media-item';
+            container.appendChild(card);
+        });
+    }
 
-                if (isPdf) {
-                    wrapper.innerHTML = `
-                        <span class="media-title">📄 ${fileName}</span>
-                        <iframe src="${filePath}" class="pdf-viewer" title="${fileName}"></iframe>
-                        <a href="${filePath}" target="_blank" class="btn">Open PDF</a>
-                    `;
-                } else {
-                    wrapper.innerHTML = `
-                        <span class="media-title">🖼️ ${fileName}</span>
-                        <img src="${filePath}" alt="${fileName}" loading="lazy">
-                        <a href="${filePath}" target="_blank" class="btn">View Image</a>
-                    `;
-                }
-
-                container.appendChild(wrapper);
-            });
-        }
-
-        // Render everything on load
-        renderFiles(armenopediaFiles, 'assets', 'armenopedia-assets-container');
-        renderFiles(jobFiles, 'job', 'job-assets-container');
-    </script>
+    // Render assets on page load
+    renderArmenopediaShowcase(armenopediaFiles, 'assets', 'armenopedia-assets-container');
+</script>
 
 </body>
 </html>
