@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,12 @@
             --border: #334155;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg);
@@ -24,35 +30,101 @@
             padding: 24px 16px;
         }
 
-        .container { max-width: 1050px; margin: 0 auto; }
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+        }
 
-        h2 { font-size: 1.6rem; color: var(--text-main); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 4px; margin-bottom: 20px; }
+        h2 {
+            font-size: 1.6rem;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+        }
 
         /* Project Card Base */
-        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 32px; }
-        .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
-        .card h3 { font-size: 1.4rem; color: var(--text-main); }
-        .date { font-size: 0.85rem; color: var(--text-muted); }
-        
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px 0; }
-        .tags span { 
-            background: rgba(56, 189, 248, 0.1); 
-            color: var(--accent); 
-            border: 1px solid var(--accent); 
-            padding: 4px 12px; 
-            border-radius: 14px; 
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 14px 0 18px 0;
+        }
+
+        .tags span {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 4px 12px;
+            border-radius: 14px;
             font-size: 0.82rem;
             font-weight: 500;
         }
 
-        .project-description { margin-bottom: 16px; color: var(--text-muted); font-size: 0.98rem; }
-        ul.points { margin-left: 20px; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
-        ul.points li { margin-bottom: 8px; }
-        ul.points strong { color: var(--text-main); }
+        .project-description {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        ul.points {
+            margin-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        ul.points li {
+            margin-bottom: 8px;
+        }
+
+        ul.points strong {
+            color: var(--text-main);
+        }
 
         /* Media Grid with PDF Live Preview Frames */
-        .showcase-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px 0; color: var(--text-main); border-top: 1px solid var(--border); padding-top: 16px; }
-        .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+        .showcase-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: var(--text-main);
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 14px;
+        }
+
         .media-card {
             background: var(--bg);
             border: 1px solid var(--border);
@@ -65,7 +137,12 @@
             transition: transform 0.2s, border-color 0.2s;
             position: relative;
         }
-        .media-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+
+        .media-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
         .media-label {
             padding: 8px 10px;
             font-size: 0.82rem;
@@ -76,10 +153,22 @@
             text-align: center;
             z-index: 2;
         }
-        
-        .preview-wrapper { width: 100%; height: 140px; overflow: hidden; position: relative; background: #fff; }
-        .media-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        
+
+        .preview-wrapper {
+            width: 100%;
+            height: 140px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+        }
+
+        .media-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         /* Scaled PDF Embed Preview */
         .pdf-preview-embed {
             width: 1000px;
@@ -87,13 +176,29 @@
             border: none;
             transform: scale(0.2);
             transform-origin: 0 0;
-            pointer-events: none; /* Clicking passes through to anchor tag */
+            pointer-events: none;
+            /* Clicking passes through to anchor tag */
         }
 
-        .file-name { display: block; padding: 6px 8px; font-size: 0.75rem; color: var(--text-muted); text-align: center; background: var(--bg); z-index: 2; }
+        .file-name {
+            display: block;
+            padding: 6px 8px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: center;
+            background: var(--bg);
+            z-index: 2;
+        }
 
         /* Client Work Case Studies Section */
-        .case-study-list { display: flex; flex-direction: column; gap: 24px; margin-top: 16px; }
+        /* Client Work Case Studies Section */
+        .case-study-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
         .case-study-item {
             display: grid;
             grid-template-columns: 280px 1fr;
@@ -103,239 +208,273 @@
             border-radius: 8px;
             padding: 16px;
         }
+
         @media (max-width: 768px) {
-            .case-study-item { grid-template-columns: 1fr; }
+            .case-study-item {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .case-study-img-wrapper {
+        /* Multi-Image Column Support */
+        .case-study-media-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .case-study-img-card {
             border: 1px solid var(--border);
             border-radius: 6px;
             overflow: hidden;
+            background: var(--card-bg);
             display: flex;
             flex-direction: column;
         }
-        .case-study-img-wrapper img { width: 100%; height: auto; object-fit: cover; display: block; }
-        .case-study-img-wrapper a {
+
+        .case-study-img-card img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
             display: block;
-            text-align: center;
-            padding: 6px;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
         }
 
-        .case-study-details h4 { font-size: 1.1rem; color: var(--text-main); margin-bottom: 6px; }
-        .case-study-details .client-tag { display: inline-block; font-size: 0.8rem; color: var(--accent-green); font-weight: 600; margin-bottom: 10px; }
-        .case-study-details p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; }
-        .case-study-details .deliverables-title { font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-top: 8px; }
-        .case-study-details ul { margin-left: 18px; color: var(--text-muted); font-size: 0.88rem; }
+        .case-study-img-card a {
+            display: block;
+            text-align: center;
+            padding: 5px 8px;
+            background: rgba(56, 189, 248, 0.08);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-top: 1px solid var(--border);
+        }
+
+        .case-study-details h4 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .case-study-details .client-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .case-study-details p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .case-study-details .deliverables-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-top: 8px;
+        }
+
+        .case-study-details ul {
+            margin-left: 18px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- ARMENOPEDIA SECTION -->
-    <section>
-        <h2>Featured Platform Project</h2>
+        <!-- ARMENOPEDIA SECTION -->
+        <section>
+            <h2>Featured Platform Project</h2>
 
-        <div class="card">
-            <div class="card-header">
-                <h3>DiasporaArm — Armenopedia Ecosystem Platform</h3>
-                <span class="date">Oct 2025 – Jul 2026</span>
+            <div class="card">
+                <div class="card-header">
+                    <h3>DiasporaArm — Armenopedia Ecosystem Platform</h3>
+                    <span class="date">Oct 2025 – Jul 2026</span>
+                </div>
+
+                <div class="tags">
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>REST API</span>
+                    <span>PostgreSQL</span>
+                    <span>MySQL</span>
+                    <span>Web Scraping & Data Cleaning</span>
+                    <span>JavaScript (ES6+)</span>
+                    <span>HTML5 / CSS3</span>
+                    <span>Linux (systemd)</span>
+                </div>
+
+                <p class="project-description">
+                    Engineered a scalable, full-stack directory platform designed to consolidate global diaspora
+                    organizations, enterprise entities, profiles, and resources into a unified portal[cite: 1].
+                </p>
+
+                <ul class="points">
+                    <li><strong>Full-Stack Architecture & REST APIs:</strong> Built backend application routes in
+                        Node.js/Express with REST APIs for frontend integration[cite: 1].</li>
+                    <li><strong>Data Pipelines & Ingestion:</strong> Built extraction and cleaning scripts to transform
+                        raw web data into production SQL structures[cite: 1].</li>
+                    <li><strong>Database Normalization:</strong> Designed schemas in PostgreSQL and MySQL to query user
+                        records and media assets[cite: 1].</li>
+                </ul>
+
+                <div class="showcase-title">Platform Architecture, UI Layouts & Code Artifacts</div>
+                <div id="armenopedia-assets-container" class="media-grid"></div>
             </div>
+        </section>
 
-            <div class="tags">
-                <span>Node.js</span>
-                <span>Express.js</span>
-                <span>REST API</span>
-                <span>PostgreSQL</span>
-                <span>MySQL</span>
-                <span>Web Scraping & Data Cleaning</span>
-                <span>JavaScript (ES6+)</span>
-                <span>HTML5 / CSS3</span>
-                <span>Linux (systemd)</span>
+        <!-- CLIENT WORK & UPWORK DELIVERABLES -->
+        <section>
+            <h2>Client Projects & Freelance Deliverables</h2>
+
+            <div class="card">
+                <p class="project-description">
+                    Below are selected client engagements from Upwork, featuring technical execution notes, scraping
+                    pipelines, automated workflows, and verified feedback.
+                </p>
+
+                <div id="upwork-case-studies" class="case-study-list"></div>
             </div>
+        </section>
 
-            <p class="project-description">
-                Engineered a scalable, full-stack directory platform designed to consolidate global diaspora organizations, enterprise entities, profiles, and resources into a unified portal[cite: 1].
-            </p>
+    </div>
 
-            <ul class="points">
-                <li><strong>Full-Stack Architecture & REST APIs:</strong> Built backend application routes in Node.js/Express with REST APIs for frontend integration[cite: 1].</li>
-                <li><strong>Data Pipelines & Ingestion:</strong> Built extraction and cleaning scripts to transform raw web data into production SQL structures[cite: 1].</li>
-                <li><strong>Database Normalization:</strong> Designed schemas in PostgreSQL and MySQL to query user records and media assets[cite: 1].</li>
-            </ul>
+    <script>
+        // 1. ARMENOPEDIA FILES (PDFs AND IMAGES)
+        const armenopediaFiles = [
+            { file: 'Armenopedia-home-page.pdf', title: 'Main Home Page Layout' },
+            { file: 'Armenoedia Admin-panel.pdf', title: 'Admin Control Panel' },
+            { file: 'People-page.pdf', title: 'People Directory Index' },
+            { file: 'Person Profile.pdf', title: 'Individual Profile View' },
+            { file: 'Person Profile-ge.pdf', title: 'Localized Profile Layout' },
+            { file: 'Students Page.pdf', title: 'Student Directory Index' },
+            { file: 'Student Profile.pdf', title: 'Student Profile Detail' },
+            { file: 'Enterprises & Industry.pdf', title: 'Enterprise Directory Index' },
+            { file: 'Enterprise Profile.pdf', title: 'Enterprise Business View' },
+            { file: 'Hospitality.pdf', title: 'Hospitality Sector Index' },
+            { file: 'Hospitality Profile.pdf', title: 'Hospitality Profile Detail' },
+            { file: 'Armenopedia Login Form.pdf', title: 'Authentication Login Form' },
+            { file: 'Armenopedia Login Form-signup.pdf', title: 'User Registration Form' },
+            { file: 'Profile Page.pdf', title: 'User Account Dashboard' },
+            { file: 'Profile Page-edit.pdf', title: 'Profile Settings & Editor' },
+            { file: 'Profile Page-changepass.pdf', title: 'Security & Password View' },
+            { file: 'armenopedia-code.png', title: 'Node.js/Express Controller' },
+            { file: 'armenopedia-code1.png', title: 'REST API Route Implementation' },
+            { file: 'armenopedia-code2.png', title: 'Database Pipeline Integration' },
+            { file: 'armenopedia-code3.png', title: 'Frontend UI Scripting' },
+            { file: 'armenopedia-code4.png', title: 'Data Cleaning & Query Logic' },
+            { file: 'struct-code.png', title: 'Relational Database Schema' },
+            { file: 'Screenshot from 2026-10-18 17-39-05.png', title: 'UI Component Interface' },
+            { file: 'Screenshot from 2026-10-18 17-40-07.png', title: 'System Logs & Response' }
+        ];
 
-            <div class="showcase-title">Platform Architecture, UI Layouts & Code Artifacts</div>
-            <div id="armenopedia-assets-container" class="media-grid"></div>
-        </div>
-    </section>
+        function renderArmenopediaShowcase(items, folderPath, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
 
-    <!-- CLIENT WORK & UPWORK DELIVERABLES -->
-    <section>
-        <h2>Client Projects & Freelance Deliverables</h2>
+            items.forEach(item => {
+                const filePath = `${folderPath}/${encodeURIComponent(item.file)}`;
+                const isPdf = item.file.toLowerCase().endsWith('.pdf');
 
-        <div class="card">
-            <p class="project-description">
-                Below are selected client engagements from Upwork, featuring technical execution notes, scraping pipelines, automated workflows, and verified feedback.
-            </p>
+                const card = document.createElement('a');
+                card.className = 'media-card';
+                card.href = filePath;
+                card.target = '_blank';
 
-            <div id="upwork-case-studies" class="case-study-list"></div>
-        </div>
-    </section>
-
-</div>
-
-<script>
-    // 1. ARMENOPEDIA FILES (PDFs AND IMAGES)
-    const armenopediaFiles = [
-        { file: 'Armenopedia-home-page.pdf', title: 'Main Home Page Layout' },
-        { file: 'Armenoedia Admin-panel.pdf', title: 'Admin Control Panel' },
-        { file: 'People-page.pdf', title: 'People Directory Index' },
-        { file: 'Person Profile.pdf', title: 'Individual Profile View' },
-        { file: 'Person Profile-ge.pdf', title: 'Localized Profile Layout' },
-        { file: 'Students Page.pdf', title: 'Student Directory Index' },
-        { file: 'Student Profile.pdf', title: 'Student Profile Detail' },
-        { file: 'Enterprises & Industry.pdf', title: 'Enterprise Directory Index' },
-        { file: 'Enterprise Profile.pdf', title: 'Enterprise Business View' },
-        { file: 'Hospitality.pdf', title: 'Hospitality Sector Index' },
-        { file: 'Hospitality Profile.pdf', title: 'Hospitality Profile Detail' },
-        { file: 'Armenopedia Login Form.pdf', title: 'Authentication Login Form' },
-        { file: 'Armenopedia Login Form-signup.pdf', title: 'User Registration Form' },
-        { file: 'Profile Page.pdf', title: 'User Account Dashboard' },
-        { file: 'Profile Page-edit.pdf', title: 'Profile Settings & Editor' },
-        { file: 'Profile Page-changepass.pdf', title: 'Security & Password View' },
-        { file: 'armenopedia-code.png', title: 'Node.js/Express Controller' },
-        { file: 'armenopedia-code1.png', title: 'REST API Route Implementation' },
-        { file: 'armenopedia-code2.png', title: 'Database Pipeline Integration' },
-        { file: 'armenopedia-code3.png', title: 'Frontend UI Scripting' },
-        { file: 'armenopedia-code4.png', title: 'Data Cleaning & Query Logic' },
-        { file: 'struct-code.png', title: 'Relational Database Schema' },
-        { file: 'Screenshot from 2026-10-18 17-39-05.png', title: 'UI Component Interface' },
-        { file: 'Screenshot from 2026-10-18 17-40-07.png', title: 'System Logs & Response' }
-    ];
-
-    function renderArmenopediaShowcase(items, folderPath, containerId) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = '';
-
-        items.forEach(item => {
-            const filePath = `${folderPath}/${encodeURIComponent(item.file)}`;
-            const isPdf = item.file.toLowerCase().endsWith('.pdf');
-            
-            const card = document.createElement('a');
-            card.className = 'media-card';
-            card.href = filePath;
-            card.target = '_blank';
-
-            if (isPdf) {
-                // PDF live page thumbnail preview inside iframe wrapper
-                card.innerHTML = `
+                if (isPdf) {
+                    // PDF live page thumbnail preview inside iframe wrapper
+                    card.innerHTML = `
                     <div class="media-label">${item.title}</div>
                     <div class="preview-wrapper">
                         <iframe class="pdf-preview-embed" src="${filePath}#toolbar=0&navpanes=0&scrollbar=0"></iframe>
                     </div>
                     <span class="file-name">📄 Open PDF Document</span>
                 `;
-            } else {
-                // Image preview
-                card.innerHTML = `
+                } else {
+                    // Image preview
+                    card.innerHTML = `
                     <div class="media-label">${item.title}</div>
                     <div class="preview-wrapper">
                         <img src="${filePath}" alt="${item.title}" loading="lazy">
                     </div>
                     <span class="file-name">🖼️ View Image</span>
                 `;
-            }
+                }
 
-            container.appendChild(card);
-        });
-    }
-
-    // 2. UPWORK CLIENT CASE STUDIES (CUSTOMIZE DESCRIPTIONS BELOW FOR YOUR EXACT SCREENSHOTS)
-    const upworkProjects = [
-        {
-            image: 'feedback1.png',
-            title: 'High-Volume Web Extraction & Pipeline Automation',
-            client: 'Verified Upwork Client Review',
-            summary: 'Engineered custom scraping scripts to harvest and parse complex web assets while bypassing dynamic anti-bot protection systems[cite: 1].',
-            deliverables: [
-                'Harvested and validated 800,000+ media assets and raw records[cite: 1].',
-                'Configured proxy pool rotation and dynamic headless browser session handling[cite: 1].',
-                'Cleaned, structured, and exported final datasets into structured JSON/CSV formats[cite: 1].'
-            ]
-        },
-        {
-            image: 'asp1.png',
-            title: 'Automated Data Pipeline & Database Integration',
-            client: 'Custom Automation Script',
-            summary: 'Developed Python-based automation workflows to automatically fetch, clean, and insert raw scraped records into target SQL tables[cite: 1].',
-            deliverables: [
-                'Designed automated parsing functions using Pandas and BeautifulSoup[cite: 1].',
-                'Implemented database connection handlers for low-latency batch inserts[cite: 1].',
-                'Delivered clean script execution documentation and logging mechanisms[cite: 1].'
-            ]
-        },
-        {
-            image: 'feedback2.png',
-            title: 'Script Refactoring, Debugging & Performance Audit',
-            client: '5-Star Freelance Feedback',
-            summary: 'Audited existing client codebase to eliminate memory leaks, optimize query execution time, and repair broken scrapers[cite: 1].',
-            deliverables: [
-                'Fixed network timeout issues across concurrent scraping requests[cite: 1].',
-                'Optimized async workflows reducing total execution runtimes[cite: 1].',
-                'Provided clean client documentation for running scripts on Linux servers[cite: 1].'
-            ]
-        },
-        {
-            image: 'jermy1.png',
-            title: 'Custom Scraper & Data Pipeline Output',
-            client: 'Data Delivery Verification',
-            summary: 'Demonstrating structured output generated by automated data scrapers mapped directly into client database schemas.',
-            deliverables: [
-                'Normalized raw payload data into relational database fields.',
-                'Validated payload accuracy and handled missing attribute edge cases.'
-            ]
+                container.appendChild(card);
+            });
         }
-    ];
 
-    function renderUpworkCaseStudies(projects, folderPath, containerId) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = '';
+        // 2. UPWORK CLIENT CASE STUDIES (CUSTOMIZE DESCRIPTIONS BELOW FOR YOUR EXACT SCREENSHOTS)
+        const upworkProjects = [
+            {
+                images: [
+                    { file: 'asp.png', label: 'Client Feedback & Contract' },
+                    { file: 'asp2.png', label: 'Groover.co Code Snippet' }
+                ],
+                title: 'Python Scrapy Consulting & Music Platform Automation',
+                client: '5.0 ★★★★★ Upwork Client Review (Aspen Hsu)',
+                summary: 'Provided technical consulting and developed automated web scraping scripts targeting Groover.co to extract song and album data. Conducted code reviews and delivered full documentation for future maintenance.',
+                deliverables: [
+                    'Developed custom Python web scrapers (Selenium/Scrapy) to automatically extract songs and album metadata from Groover.co.',
+                    'Audited and explained complex scraping code logic to help the client understand and extend the scripts independently.',
+                    'Created a step-by-step operational setup guide for running future automated extraction tasks.',
+                    'Assisted in setting up automated data export pipelines into clean CSV format.'
+                ]
+            }
+        ];
 
-        projects.forEach(project => {
-            const imagePath = `${folderPath}/${encodeURIComponent(project.image)}`;
-            
-            const item = document.createElement('div');
-            item.className = 'case-study-item';
+        function renderUpworkCaseStudies(projects, folderPath, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
 
-            const deliverablesList = project.deliverables.map(d => `<li>${d}</li>`).join('');
+            projects.forEach(project => {
+                const item = document.createElement('div');
+                item.className = 'case-study-item';
 
-            item.innerHTML = `
-                <div class="case-study-img-wrapper">
-                    <img src="${imagePath}" alt="${project.title}" loading="lazy">
-                    <a href="${imagePath}" target="_blank">View Full Screenshot ↗</a>
-                </div>
-                <div class="case-study-details">
-                    <h4>${project.title}</h4>
-                    <span class="client-tag">${project.client}</span>
-                    <p>${project.summary}</p>
-                    <div class="deliverables-title">What I Delivered & Accomplished:</div>
-                    <ul>${deliverablesList}</ul>
+                const imagesHtml = project.images.map(img => {
+                    const imagePath = `${folderPath}/${encodeURIComponent(img.file)}`;
+                    return `
+                <div class="case-study-img-card">
+                    <img src="${imagePath}" alt="${img.label}" loading="lazy">
+                    <a href="${imagePath}" target="_blank">🔍 ${img.label} ↗</a>
                 </div>
             `;
+                }).join('');
 
-            container.appendChild(item);
-        });
-    }
+                const deliverablesList = project.deliverables.map(d => `<li>${d}</li>`).join('');
 
-    // Render both sections on load
-    renderArmenopediaShowcase(armenopediaFiles, 'assets', 'armenopedia-assets-container');
-    renderUpworkCaseStudies(upworkProjects, 'job', 'upwork-case-studies');
-</script>
+                item.innerHTML = `
+            <div class="case-study-media-col">
+                ${imagesHtml}
+            </div>
+            <div class="case-study-details">
+                <h4>${project.title}</h4>
+                <span class="client-tag">${project.client}</span>
+                <p>${project.summary}</p>
+                <div class="deliverables-title">What I Delivered & Accomplished:</div>
+                <ul>${deliverablesList}</ul>
+            </div>
+        `;
+
+                container.appendChild(item);
+            });
+        }
+
+        // Call renderer
+
+        // Render both sections on load
+        renderArmenopediaShowcase(armenopediaFiles, 'assets', 'armenopedia-assets-container');
+        renderUpworkCaseStudies(upworkProjects, 'job', 'upwork-case-studies');
+    </script>
 
 </body>
+
 </html>
